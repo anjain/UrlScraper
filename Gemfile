@@ -45,3 +45,13 @@ group :development do
   gem 'spring'
 end
 
+gem 'httparty'
+
+
+group :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'ffaker'
+  gem 'rspec-collection_matchers'
+  gem "shoulda-matchers"
+end

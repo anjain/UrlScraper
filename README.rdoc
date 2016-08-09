@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please use following configuration for running the app:
+- Ruby version 2.2.2 or similar
+- Postgresql Database
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Steps/commands to start the application:
+- command - cp config/database.yml.example config/database.yml
+- step - open database.yml file and configure it as per your system database connection setting
+- command - bundle exec rake db:create
+- command - bundle exec rake db:migrate
+- command - rails server
+After running the above commands, server will run and ready to use.
+
+
+Commands to check the endpoints:
+- Open another terminal and run following commands: 
+a) curl -H "Content-Type: application/json" -X POST -d '{"url":"http://www.google.com"}' http://localhost:3000/api/v1/pages/get_data
+Replace url with the URL you want to scrap
+
+b) Method-1: curl -H "Content-Type: application/json" http://localhost:3000/api/v1/pages
+   Method-2: Hit on browser "http://localhost:3000/api/v1/pages"
